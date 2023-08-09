@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block pagetitle %}{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static './css/reset.css' %}">
+    <link rel="stylesheet" href="{% static './css/main.css' %}">
+
+</head>
+<body>
+
+    <div id="bodyWrap">
+
+        <header>
+            <nav>
+                <a href="{% url 'HOMEPAGE'%}">人員列表</a>
+                <a href="{% url 'CREATEPAGE'%}">新增人員</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer>
+            <span>Employee Management</span>
+            <br><br>
+            <b>♣♦♥♠</b>
+        </footer>
+
+    </div>
+    
+</body>
+</html>

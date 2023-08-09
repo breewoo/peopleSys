@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block pagetitle %}人員列表{% endblock %}
+
+
+{% block main %}
+
+<div class="pageWrap">
+    <form action="/update/{{peopleUnit.id}}" method="POST" class="employeeForm">
+        {% csrf_token %}
+        <span>
+            <label for="name">name</label>
+            <input type="text" name="name" required value="{{peopleUnit.name}}">
+        </span>
+        <span>
+            <label for="gender">gender</label>
+            <select name="gender" id="" required>
+                <option value="Female" {% if peopleUnit.gender == 'Female'%}selected {% endif %}>Female</option>
+                <option value="Male" {% if peopleUnit.gender == 'Male'%}selected {% endif %}>Male</option>
+            </select>
+        </span>
+        <span>
+            <label for="age">age</label>
+            <input type="number" name="age" value="{{peopleUnit.age}}">
+        </span>
+        <span>
+            <label for="position">position</label>
+            <select name="position" id=""required>
+                <option value="Developer" {% if peopleUnit.position == 'Developer'%}selected {%endif%}>Developer</option>
+                <option value="Designer" {% if peopleUnit.position == 'Designer'%}selected {%endif%}>Designer</option>
+                <option value="Assistant" {% if peopleUnit.position == 'Assistant'%}selected {%endif%}>Assistant</option>
+            </select>
+        </span>
+        <span>
+            <label for="language">language</label>
+            <input name="language" type="checkbox" value="English" {% if 'English' in peopleUnit.language %}checked="True"{% endif%}><b class="forcheck" for="">English</b>
+            <input name="language" type="checkbox" value="Mandarin"{% if 'Mandarin' in peopleUnit.language %}checked="True"{% endif%}><b class="forcheck" for="">Mandarin</b>
+            <input name="language" type="checkbox" value="Japanese"{% if 'Japanese' in peopleUnit.language %}checked="True"{% endif%}><b class="forcheck" for="">Japanese</b>
+            <input name="language" type="checkbox" value="Korean"{% if 'Korean' in peopleUnit.language %}checked="True"{% endif%}><b class="forcheck" for="">Korean</b>
+        </span>
+        <span>
+            <label for="language">salary</label>
+            <b>$</b><input type="text" placeholder="salary" name="salary" value="{{peopleUnit.salary}}">
+        </span>
+        <span>
+            <button type="submit">儲存</button>
+        </span>
+    </form>
+</div>
+
+{% endblock %}

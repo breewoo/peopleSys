@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block pagetitle %}人員列表{% endblock %}
+
+
+{% block main %}
+
+<div class="pageWrap">
+    <ul class="employeeList">
+
+        {% for peo in peopleList %}
+        <li>
+            <span class="name">{{peo.name}}</span>
+            <span class="gender">
+                {{peo.gender}}
+            </span>
+            <span class="age">({{peo.age}})</span>
+            <span class="position">
+                {{peo.position}}
+            </span>
+            <span class="salary">${{peo.salary}}</span>
+            <span class="edit"><a href="/edit/{{peo.pk}}">Edit</a></span>
+            <span class="delete"><a href="/delete/{{peo.pk}}">DEL</a></span>
+        </li>
+        {% endfor %}
+        
+    </ul>
+</div>
+
+{% endblock %}

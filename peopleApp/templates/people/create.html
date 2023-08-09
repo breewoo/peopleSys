@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block pagetitle %}人員列表{% endblock %}
+
+
+{% block main %}
+
+<div class="pageWrap">
+    <form action="create" method="POST" class="employeeForm">
+        {% csrf_token %}
+        <span>
+            <label for="name">name</label>
+            <input type="text" name="name" required>
+        </span>
+        <span>
+            <label for="gender">gender</label>
+            <select name="gender" id="" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+        </span>
+        <span>
+            <label for="age">age</label>
+            <input type="number" name="age">
+        </span>
+        <span>
+            <label for="position">position</label>
+            <select name="position" id="" required>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Assistant">Assistant</option>
+            </select>
+        </span>
+        <span>
+            <label for="languages">language</label>
+            <input name="language" type="checkbox" value="English"><b class="forcheck" for="">English</b>
+            <input name="language" type="checkbox" value="Mandarin"><b class="forcheck" for="">Mandarin</b>
+            <input name="language" type="checkbox" value="Japanese"><b class="forcheck" for="">Japanese</b>
+            <input name="language" type="checkbox" value="Korean"><b class="forcheck" for="">Korean</b>
+        </span>
+        <span>
+            <label for="language">salary</label>
+            <b>$</b><input type="text" placeholder="salary" name="salary">
+        </span>
+        <span>
+            <button type="submit">儲存</button>
+        </span>
+    </form>
+</div>
+
+{% endblock %}

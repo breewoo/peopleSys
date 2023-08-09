@@ -1,0 +1,247 @@
+*{
+    font-family: 'Noto Serif TC', serif !important;
+    box-sizing: border-box !important;
+}
+
+#bodyWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100vw;
+    min-height:100vh;
+    overflow-x: hidden;
+    clear: both;
+
+    background: #ded5c7;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header > nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+header > nav > a{
+    font-size: 20px;
+    background: #0c1355;
+    color:#e4daca;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-weight: 700;
+    margin: 0 5px;
+}
+
+header > nav > a:hover{
+    background:#c53640;
+}
+
+
+main{
+    display: block;
+    margin: 50px auto;
+    width: 100%;
+}
+
+footer{
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 50px;
+    color: #0c1355;
+}
+
+footer > span{
+    display: block-inline;
+    font-size: 16px;
+    border-top: 1px solid #0c1355;
+    border-bottom: 1px solid #0c1355;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-weight: 700;
+}
+
+footer > b{
+    display: block-inline;
+    font-size: 16px;
+    margin: 20px auto;
+    color: #c53640;
+}
+
+
+.pageWrap{
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+}
+
+.employeeList{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    width: 100%;
+}
+
+.employeeList >li{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    border-bottom: 1px solid #0c1355;
+    padding: 5px 15px;
+}
+
+/* .employeeList >li:first-child{
+    border-bottom: 1px solid #0c1355;
+} */
+
+.employeeList >li > span{
+    color:#0c1355;
+    padding: 5px 10px;
+}
+
+.employeeList >li > span.name{
+    font-size: 36px;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.employeeList >li > span.age{
+    font-weight: 700;
+}
+
+.employeeList >li > span a{
+    text-decoration: none;
+    color: #ded5c7;
+    padding: 0 5px;
+}
+
+.employeeList >li > span.edit,
+.employeeList >li > span.delete{
+    padding: 5px 0;
+}
+
+.employeeList >li > span.edit a {
+    background: #0c1355;
+    color: #ded5c7;
+}
+
+.employeeList >li > span.delete a{
+    background: #c53640;
+    color: #ded5c7;
+}
+
+.employeeList >li > span a:hover{
+    color: white;
+}
+
+.employeeForm{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.employeeForm > span{
+    width: 100%;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+    
+}
+
+.employeeForm > span input[type=text],
+.employeeForm > span input[type=number],
+.employeeForm > span select{
+    flex-grow: 1;
+    font-size: 24px;
+    border: none;
+    background: none;
+    color: #c53640;
+    padding: 0 10px;
+    border-bottom: 2px solid #0c1355;
+}
+
+.employeeForm > span label{
+    font-size: 30px;
+    color: #0c1355;
+    margin-right: 15px;
+    font-weight: 700;
+    
+}
+
+.employeeForm > span b{
+    font-size: 24px;
+    color: #c53640;
+}
+
+.employeeForm button{
+    background: #0c1355;
+    color: #ded5c7;
+    border: none;
+    font-size: 30px;
+    margin-left: auto;
+    padding: 0 10px;
+
+}
+
+.employeeForm button:hover{
+    background:#c53640;
+}
+
+
+@media screen and (max-width: 650px) {
+    .employeeList >li{
+        flex-wrap: wrap;
+    }
+
+    .employeeList >li > span.name{
+        order:0;
+        width:calc(100% - 83.5px);
+    }
+
+    .employeeList >li > span.gender{
+        margin-left: auto;
+        order: 3
+    }
+
+    .employeeList >li > span.age{
+        order:4;
+    }
+
+    .employeeList >li > span.position{
+        order:5;
+    }
+
+    .employeeList >li > span.salary{
+        order:6;
+    }
+
+    .employeeList >li > span.edit{
+        order:1;
+        margin-left: auto
+    }
+
+    .employeeList >li > span.delete{
+        order:2;
+    }
+
+}
